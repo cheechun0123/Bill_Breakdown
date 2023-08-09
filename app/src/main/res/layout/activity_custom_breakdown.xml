@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0FEFE"
+
+    tools:context=".CustomBreakdownActivity">
+
+    <!-- res/layout/activity_custom_breakdown.xml -->
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:context=".CustomBreakdownActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Add Bill Name EditText -->
+            <EditText
+                android:id="@+id/billNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Bill Name"
+
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/totalAmountEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Total Amount"
+                android:layout_below="@id/billNameEditText"
+                android:inputType="numberDecimal" />
+
+            <LinearLayout
+                android:id="@+id/personLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/totalAmountEditText"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/personLayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp">
+
+                <Button
+                    android:id="@+id/addPersonButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+
+                    android:text="Add Person"
+                    android:onClick="onAddPersonClick" />
+
+                <Button
+                    android:id="@+id/undoButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Undo"
+                    android:textColor="#000000"
+
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/calculateButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Calculate Custom Shares"
+                android:layout_centerHorizontal="true"
+                android:textColor="#000000"
+
+                android:layout_below="@id/personLayout"
+                android:layout_marginTop="62dp" />
+
+            <TextView
+                android:id="@+id/resultTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/calculateButton"
+                android:layout_centerHorizontal="true"
+                android:textColor="#000000"
+
+                android:layout_marginTop="24dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:layout_centerHorizontal="true"
+                android:textColor="#000000"
+
+                android:layout_below="@id/resultTextView"
+                android:layout_marginTop="16dp"
+                android:visibility="gone" />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
